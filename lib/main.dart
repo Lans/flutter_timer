@@ -45,7 +45,9 @@ class _MyHomePageState extends State<MyHomePage> {
         });
       }
     };
-    _timer = Timer.periodic(Duration(seconds: 1), call);
+    if (_timer == null) {
+      _timer = Timer.periodic(Duration(seconds: 1), call);
+    }
   }
 
   String handleCodeAutoSizeText() {
