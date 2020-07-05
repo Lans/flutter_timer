@@ -1,6 +1,7 @@
 # flutter_timer
 
-A new Flutter application.
+倒计时实现 
+### 文章地址 https://www.jianshu.com/p/e941fe68694c
 
 ## Getting Started
 
