@@ -4,7 +4,6 @@
 
 import 'dart:async';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 
@@ -14,13 +13,13 @@ class VercodeTimerWidget extends StatefulWidget {
 }
 
 class _VercodeTimerWidgetState extends State<VercodeTimerWidget> {
-  Timer _timer;
+  Timer? _timer;
 
   //倒计时数值
   var _countdownTime = 0;
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
+    return MaterialButton(
       splashColor: Colors.transparent,
       highlightColor: Colors.transparent,
       hoverColor: Colors.transparent,
@@ -50,7 +49,7 @@ class _VercodeTimerWidgetState extends State<VercodeTimerWidget> {
     _countdownTime = 60;
     final call = (timer) {
       if (_countdownTime < 1) {
-        _timer.cancel();
+        _timer?.cancel();
       } else {
         setState(() {
           _countdownTime -= 1;
@@ -66,7 +65,7 @@ class _VercodeTimerWidgetState extends State<VercodeTimerWidget> {
   void dispose() {
     super.dispose();
     if (_timer != null) {
-      _timer.cancel();
+      _timer?.cancel();
     }
   }
 }

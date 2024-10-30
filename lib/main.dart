@@ -28,7 +28,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Timer _timer;
+  Timer? _timer;
 
   //倒计时数值
   var _enable = true;
@@ -81,8 +81,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     setState(() {
                       _time = 0;
                       _enable = true;
-                      if (_timer != null && _timer.isActive) {
-                        _timer.cancel();
+                      if (_timer != null && _timer?.isActive==true) {
+                        _timer?.cancel();
                       }
                     });
                   },
@@ -104,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void dispose() {
     super.dispose();
     if (_timer != null) {
-      _timer.cancel();
+      _timer?.cancel();
       _timer = null;
     }
   }
